@@ -4,41 +4,67 @@ import hero from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Meridian Petroleum — Crude Oil Exports & Energy Services" },
-      { name: "description", content: "Meridian Petroleum delivers crude oil exports, refined products and end-to-end oilfield services worldwide." },
-      { property: "og:title", content: "Meridian Petroleum — Oil Exports & Services" },
-      { property: "og:description", content: "Crude exports, refined products and oilfield services across global markets." },
+      { title: "Marsan Petroleum — Crude Oil Exports & Petroleum Products" },
+      { name: "description", content: "Marsan Petroleum (OOO \"Marsan Petroleum\"), Moscow: crude oil and petroleum product supply, export trading, chartering and oilfield services." },
+      { property: "og:title", content: "Marsan Petroleum — Oil Exports & Services" },
+      { property: "og:description", content: "Moscow-based crude oil and petroleum product supply, export trading and oilfield services." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
 });
 
+const COMPANY = {
+  legalName: 'LIMITED LIABILITY COMPANY "MARSAN PETROLEUM"',
+  shortName: 'OOO "MARSAN PETROLEUM"',
+  director: "Aliev Anar Khudayarovich",
+  role: "General Director",
+  email: "marsanpetroleum@mail.ru",
+  phone: "+7 (926) 749-9623",
+  phoneHref: "tel:+79267499623",
+  whatsapp: "https://wa.me/79267499623",
+  address: "129090, Moscow, Bolshaya Sukharevskaya Square, 9th floor, premises 7, room 1",
+  mapHref: "https://www.google.com/maps/search/?api=1&query=129090%20Moscow%2C%20Bolshaya%20Sukharevskaya%20Square%209",
+  inn: "7709464164",
+  ogrn: "1157746683302",
+  kpp: "770801001",
+  okopf: "Limited Liability Companies",
+  okfs: "Private property",
+  capital: "RUB 21,000",
+};
+
 const exportsList = [
-  ["Crude Oil Export", "Bonny Light and Qua Iboe grade crude supplied to refiners on FOB and CIF terms."],
-  ["Refined Products", "AGO, PMS, Jet A-1 and LPG sourced, stored and shipped to spec."],
-  ["Marine Logistics", "Chartered tanker fleet, ship-to-ship transfers and vessel inspection."],
+  ["Crude Oil", "Light and medium crude grades offered to refiners and traders on FOB, CIF and DESP terms."],
+  ["Petroleum Products", "Diesel fuel EN 590, fuel oil M100, jet fuel, LPG, naphtha and bitumen supplied to specification."],
+  ["Spot & Contract Cargoes", "One-off shipments or monthly contract volumes, priced against the agreed benchmark."],
 ];
 const servicesList = [
-  ["Drilling Support", "Rig mobilisation, well intervention and completion services."],
-  ["Pipeline & Facilities", "Construction, inspection and maintenance of flowlines and terminals."],
-  ["Engineering & Consulting", "Reservoir studies, project management and HSE advisory."],
-  ["Storage & Terminals", "Secure tank-farm storage with metered, inspected loading."],
+  ["Cargo Origination", "Sourcing, allocation and nomination of cargoes against your volume and quality requirements."],
+  ["Chartering & Logistics", "Vessel selection, shipment scheduling, port coordination and documentation."],
+  ["Inspection & Documentation", "Independent quantity and quality inspection, SGS/Bureau Veritas certificates, customs paperwork."],
+  ["Contract Structuring", "SPA drafting, payment terms, letters of credit and settlement coordination."],
 ];
-const stats = [["2.4M", "Barrels exported monthly"], ["18", "Countries served"], ["25+", "Years in operation"], ["0", "Lost-time incidents in 2025"]];
+const facts = [
+  ["2015", "Registered in Moscow"],
+  ["Moscow", "Head office"],
+  ["LLC", "Legal form (OOO)"],
+  ["FOB · CIF", "Contract terms"],
+];
 
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="absolute inset-x-0 top-0 z-20">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <a href="#" className="font-display text-xl font-extrabold tracking-tight">MERIDIAN<span className="text-gold">.</span></a>
+          <a href="#" className="font-display text-xl font-extrabold tracking-tight">MARSAN<span className="text-gold">.</span></a>
           <div className="hidden gap-8 text-sm text-muted-foreground md:flex">
             <a href="#exports" className="hover:text-foreground">Exports</a>
             <a href="#services" className="hover:text-foreground">Services</a>
             <a href="#about" className="hover:text-foreground">About</a>
-            <a href="#contact" className="hover:text-foreground">Contact</a>
+            <a href="#company" className="hover:text-foreground">Company details</a>
           </div>
-          <a href="#contact" className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Request a quote</a>
+          <a href={`mailto:${COMPANY.email}`} className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Request a quote</a>
         </nav>
       </header>
 
@@ -48,7 +74,7 @@ function Index() {
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-gold">Oil exports · Energy services</p>
           <h1 className="max-w-4xl text-5xl font-extrabold leading-[1.02] md:text-7xl">Moving energy from wellhead to world markets.</h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">Integrated crude export, refined product supply and oilfield services — delivered safely, on spec and on schedule.</p>
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">Marsan Petroleum supplies crude oil and petroleum products, and handles the logistics, inspection and paperwork behind every shipment.</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#exports" className="rounded-sm bg-primary px-6 py-3 font-semibold text-primary-foreground">Explore exports</a>
             <a href="#services" className="rounded-sm border border-border px-6 py-3 font-semibold hover:bg-surface">Our services</a>
@@ -58,7 +84,7 @@ function Index() {
 
       <section className="border-y border-border bg-surface">
         <div className="mx-auto grid max-w-7xl grid-cols-2 md:grid-cols-4">
-          {stats.map(([n, l]) => (
+          {facts.map(([n, l]) => (
             <div key={l} className="border-border px-6 py-10 [&:not(:last-child)]:border-r">
               <div className="font-display text-4xl font-extrabold text-gold">{n}</div>
               <div className="mt-2 text-sm text-muted-foreground">{l}</div>
@@ -71,7 +97,7 @@ function Index() {
         <div className="grid gap-12 md:grid-cols-[1fr_2fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">01 — Exports</p>
-            <h2 className="mt-4 text-4xl font-bold">Reliable supply to refiners worldwide.</h2>
+            <h2 className="mt-4 text-4xl font-bold">Reliable supply to refiners and traders.</h2>
           </div>
           <div className="grid gap-px overflow-hidden rounded-sm border border-border bg-border">
             {exportsList.map(([t, d]) => (
@@ -87,7 +113,7 @@ function Index() {
       <section id="services" className="bg-surface py-28">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">02 — Services</p>
-          <h2 className="mt-4 max-w-2xl text-4xl font-bold">Upstream and midstream expertise, end to end.</h2>
+          <h2 className="mt-4 max-w-2xl text-4xl font-bold">From cargo to contract, end to end.</h2>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {servicesList.map(([t, d], i) => (
               <div key={t} className="rounded-sm border border-border bg-background p-8">
@@ -103,22 +129,79 @@ function Index() {
       <section id="about" className="mx-auto grid max-w-7xl gap-12 px-6 py-28 md:grid-cols-2">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">03 — About</p>
-          <h2 className="mt-4 text-4xl font-bold">Built on safety, integrity and delivery.</h2>
+          <h2 className="mt-4 text-4xl font-bold">One accountable partner across the deal.</h2>
         </div>
-        <p className="text-lg text-muted-foreground">For over two decades, Meridian Petroleum has connected producing fields with buyers across Europe, Asia and the Americas. Our teams combine trading know-how with hands-on field operations, giving partners one accountable partner across the value chain.</p>
+        <div className="text-lg text-muted-foreground">
+          <p>Marsan Petroleum is a Moscow-based limited liability company working in crude oil and petroleum product exports and the services around them: sourcing, logistics, inspection and settlement.</p>
+          <p className="mt-4">We deal directly with producers, refiners and buyers, so counterparties get a single contact from first enquiry through to final payment.</p>
+        </div>
       </section>
 
-      <section id="contact" className="border-t border-border bg-surface py-24">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
+      <section id="company" className="border-t border-border bg-surface py-28">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">04 — Company details</p>
+          <h2 className="mt-4 text-4xl font-bold">Registered information.</h2>
+          <div className="mt-14 grid gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-2">
+            {[
+              ["Full legal name", COMPANY.legalName],
+              ["English name", COMPANY.shortName],
+              ["General Director", COMPANY.director],
+              ["Registered address", COMPANY.address],
+              ["INN", COMPANY.inn],
+              ["OGRN", COMPANY.ogrn],
+              ["KPP", COMPANY.kpp],
+              ["Legal form (OKOPF)", COMPANY.okopf],
+              ["Ownership type (OKFS)", COMPANY.okfs],
+              ["Authorized capital", COMPANY.capital],
+            ].map(([k, v]) => (
+              <div key={k} className="flex flex-col gap-2 bg-background p-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+                <dt className="shrink-0 text-sm uppercase tracking-wider text-muted-foreground">{k}</dt>
+                <dd className="font-medium tabular-nums sm:text-right">{v}</dd>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="border-t border-border py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-2">
           <div>
             <h2 className="text-4xl font-bold">Let's talk cargo or contracts.</h2>
-            <p className="mt-3 text-muted-foreground">info@meridianpetroleum.com · +234 800 000 0000</p>
+            <p className="mt-3 text-muted-foreground">Send a request by email, phone or WhatsApp — we reply with terms and availability.</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a href={`mailto:${COMPANY.email}`} className="rounded-sm bg-primary px-8 py-4 font-semibold text-primary-foreground">Email us</a>
+              <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="rounded-sm border border-border px-8 py-4 font-semibold hover:bg-surface">WhatsApp</a>
+            </div>
           </div>
-          <a href="mailto:info@meridianpetroleum.com" className="rounded-sm bg-primary px-8 py-4 font-semibold text-primary-foreground">Contact our team</a>
+          <dl className="grid gap-6 text-sm">
+            <div>
+              <dt className="uppercase tracking-wider text-muted-foreground">Email</dt>
+              <dd className="mt-1 text-lg"><a href={`mailto:${COMPANY.email}`} className="hover:text-gold">{COMPANY.email}</a></dd>
+            </div>
+            <div>
+              <dt className="uppercase tracking-wider text-muted-foreground">Phone &amp; WhatsApp</dt>
+              <dd className="mt-1 text-lg"><a href={COMPANY.phoneHref} className="hover:text-gold">{COMPANY.phone}</a></dd>
+            </div>
+            <div>
+              <dt className="uppercase tracking-wider text-muted-foreground">Address</dt>
+              <dd className="mt-1 text-lg">{COMPANY.address}</dd>
+              <dd className="mt-2"><a href={COMPANY.mapHref} target="_blank" rel="noopener noreferrer" className="text-gold underline underline-offset-4">Open in Google Maps</a></dd>
+            </div>
+            <div>
+              <dt className="uppercase tracking-wider text-muted-foreground">{COMPANY.role}</dt>
+              <dd className="mt-1 text-lg">{COMPANY.director}</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <footer className="mx-auto max-w-7xl px-6 py-8 text-sm text-muted-foreground">© 2026 Meridian Petroleum. All rights reserved.</footer>
+      <footer className="border-t border-border bg-surface">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-8 text-sm text-muted-foreground">
+          <span className="font-display font-bold text-foreground">MARSAN PETROLEUM</span>
+          <span>{COMPANY.legalName} · INN {COMPANY.inn} · OGRN {COMPANY.ogrn} · KPP {COMPANY.kpp}</span>
+          <span>© 2026 {COMPANY.shortName}. All rights reserved.</span>
+        </div>
+      </footer>
     </div>
   );
 }
