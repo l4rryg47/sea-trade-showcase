@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
+import logo from "@/assets/marsan-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,7 +58,10 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="absolute inset-x-0 top-0 z-20">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <a href="#" className="font-display text-xl font-extrabold tracking-tight">MARSAN<span className="text-gold">.</span></a>
+          <a href="#" className="flex items-center gap-3">
+            <img src={logo} alt="Marsan Petroleum logo" className="h-10 w-auto rounded-sm bg-white px-2 py-1" />
+            <span className="font-display text-xl font-extrabold tracking-tight">MARSAN<span className="text-gold">.</span></span>
+          </a>
           <div className="hidden gap-8 text-sm text-muted-foreground md:flex">
             <a href="#exports" className="hover:text-foreground">Exports</a>
             <a href="#services" className="hover:text-foreground">Services</a>
@@ -197,6 +201,7 @@ function Index() {
 
       <footer className="border-t border-border bg-surface">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-8 text-sm text-muted-foreground">
+          <img src={logo} alt="Marsan Petroleum logo" className="h-12 w-auto self-start rounded-sm bg-white px-2 py-1" />
           <span className="font-display font-bold text-foreground">MARSAN PETROLEUM</span>
           <span>{COMPANY.legalName} · INN {COMPANY.inn} · OGRN {COMPANY.ogrn} · KPP {COMPANY.kpp}</span>
           <span>© 2026 {COMPANY.shortName}. All rights reserved.</span>
