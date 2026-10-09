@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
 import logo from "@/assets/marsan-logo.png";
 
@@ -68,7 +68,10 @@ function Index() {
             <a href="#about" className="hover:text-foreground">About</a>
             <a href="#company" className="hover:text-foreground">Company details</a>
           </div>
-          <a href={`mailto:${COMPANY.email}`} className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Request a quote</a>
+          <div className="flex items-center gap-4">
+            <Link to="/ru" className="text-sm font-semibold text-muted-foreground hover:text-foreground">RU</Link>
+            <a href={`mailto:${COMPANY.email}`} className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Request a quote</a>
+          </div>
         </nav>
       </header>
 
