@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
 import logo from "@/assets/marsan-logo.png";
+import { QuoteForm } from "@/components/QuoteForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -178,6 +179,9 @@ function Index() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a href={`mailto:${COMPANY.email}`} className="rounded-sm bg-primary px-8 py-4 font-semibold text-primary-foreground">Email us</a>
               <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="rounded-sm border border-border px-8 py-4 font-semibold hover:bg-surface">WhatsApp</a>
+            </div>
+            <div className="mt-10">
+              <QuoteForm locale="en" />
             </div>
           </div>
           <dl className="grid gap-6 text-sm">
