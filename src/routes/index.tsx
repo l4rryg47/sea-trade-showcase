@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
 import logo from "@/assets/marsan-logo.png";
+import { QuoteForm } from "@/components/QuoteForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
