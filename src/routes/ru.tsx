@@ -182,6 +182,9 @@ function RuPage() {
               <a href={`mailto:${COMPANY.email}`} className="rounded-sm bg-primary px-8 py-4 font-semibold text-primary-foreground">Написать нам</a>
               <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="rounded-sm border border-border px-8 py-4 font-semibold hover:bg-surface">WhatsApp</a>
             </div>
+            <div className="mt-10">
+              <QuoteForm locale="ru" />
+            </div>
           </div>
           <dl className="grid gap-6 text-sm">
             <div>
